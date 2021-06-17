@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Последние видео </title>
+  </head>
+  <body>
+    <h1>Последние видео:</h1>
+    <form action="{% url 'new' %}" method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn" value="Добавить видео" name="Добавить видео">
+    </form>
+    {% for item in videos %}
+      <p>{{ item.description }}</p>
+      {% if item.video %}
+      <video width='400' controls>
+        <source src="{{ item.video.url }}" type='video/mp4'>
+      </video>
+      {% endif %}
+      <p>Опубликовано: {{ item.pub_date|linebreaksbr }}</p>
+      <hr>
+    {% endfor %}
+  </body>
+</html>
