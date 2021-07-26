@@ -16,4 +16,4 @@
 - Для запуска контейнера необходимо выполнить команду: `docker run -it -p 8000:8000 yamdb`
 - После этого с помощью браузера зайдите на `localhost:8000` - приложение запущено и работает.
 
-Стек: Python, Django, Django Rest Framework, Moviepy.
+Стек: Python, Django, Django Rest Framework, Moviepy, Docker.
